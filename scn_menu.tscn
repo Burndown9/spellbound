@@ -1,0 +1,210 @@
+[gd_scene load_steps=11 format=3 uid="uid://oqavxbbhmb1w"]
+
+[ext_resource type="Script" path="res://scn_menu.gd" id="1_4i1ai"]
+[ext_resource type="Texture2D" uid="uid://4okcy3rqcsjq" path="res://art/0_main_wizard.png" id="2_layn3"]
+[ext_resource type="FontFile" uid="uid://brgntqlkxkw78" path="res://fonts/IMMORTAL.ttf" id="2_nljny"]
+[ext_resource type="FontFile" uid="uid://b8tmyjgptcvxj" path="res://fonts/ENDOR___.ttf" id="3_1aek7"]
+[ext_resource type="AudioStream" uid="uid://ca0koe3u03g7l" path="res://audio/00_Bound_In_Bile.wav" id="5_i15ty"]
+[ext_resource type="AudioStream" uid="uid://cj25jltwe8s" path="res://audio/sfx_crash.wav" id="6_qyrn4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5mwi"]
+bg_color = Color(0.576471, 0.305882, 0, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+shadow_color = Color(0, 0, 0, 0.301961)
+shadow_size = 5
+shadow_offset = Vector2(0, 6)
+
+[sub_resource type="Animation" id="Animation_2pwo6"]
+resource_name = "fade_to_black"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("colorrect_fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oa2v0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("colorrect_fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hi3sl"]
+_data = {
+"RESET": SubResource("Animation_oa2v0"),
+"fade_to_black": SubResource("Animation_2pwo6")
+}
+
+[node name="scn_menu" type="Node"]
+script = ExtResource("1_4i1ai")
+
+[node name="colorrect_bg" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.737255)
+
+[node name="0MainWizard" type="Sprite2D" parent="."]
+position = Vector2(569, 433)
+scale = Vector2(2.3, 2.3)
+texture = ExtResource("2_layn3")
+
+[node name="lbl_title" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.5
+offset_top = 420.0
+offset_right = 300.5
+offset_bottom = 523.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.62803, 0.345805, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_nljny")
+theme_override_font_sizes/font_size = 80
+text = "SPELLBOUND"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lbl_subtitle" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 520.0
+offset_right = 132.0
+offset_bottom = 580.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 30
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("3_1aek7")
+theme_override_font_sizes/font_size = 30
+text = "The Grimoire Gambit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btn_new_game" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 40)
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 400.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_1aek7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5mwi")
+text = "New Game"
+
+[node name="btn_load_game" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 40)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -449.0
+offset_top = 310.0
+offset_right = -249.0
+offset_bottom = 350.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_1aek7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5mwi")
+text = "Load Game"
+
+[node name="btn_quit" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 40)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 219.0
+offset_top = 310.0
+offset_right = 419.0
+offset_bottom = 350.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_1aek7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5mwi")
+text = "Exit"
+
+[node name="Button3" type="Button" parent="."]
+custom_minimum_size = Vector2(200, 40)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 174.0
+offset_top = 200.0
+offset_right = 374.0
+offset_bottom = 240.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_1aek7")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5mwi")
+text = "Options"
+
+[node name="colorrect_fade" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_i15ty")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qyrn4")
+
+[node name="tmr_quit" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hi3sl")
+}
+
+[connection signal="pressed" from="btn_new_game" to="." method="_on_btn_new_game_pressed"]
+[connection signal="pressed" from="btn_load_game" to="." method="_on_btn_load_game_pressed"]
+[connection signal="pressed" from="btn_quit" to="." method="_on_btn_quit_pressed"]
+[connection signal="timeout" from="tmr_quit" to="." method="_on_quit_timeout"]

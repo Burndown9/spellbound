@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Spirelike"
+run/main_scene="res://scn_menu.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 

@@ -34,16 +34,21 @@ func BackToMap():
 func _on_btn_new_game_pressed():
 	#play crash effect
 	$SFX.play()
+	$Music.stop()
+	$AnimationPlayer.play("fade_to_black")
 
 
 func _on_btn_load_game_pressed():
 	#play crash effect
 	$SFX.play()
+	$Music.stop()
+	$AnimationPlayer.play("fade_to_black")
 
 
 func _on_btn_quit_pressed():
 	#play crash effect
 	$SFX.play()
+	$Music.stop()
 	#start the timer
 	$tmr_quit.start()
 	#begin fadeout

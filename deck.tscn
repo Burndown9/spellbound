@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj3sxvagik5do"]
+
+[ext_resource type="Script" path="res://deck.gd" id="1_cmhdn"]
+[ext_resource type="Script" path="res://DeckPlayer.gd" id="2_cn6te"]
+[ext_resource type="Script" path="res://DeckTutorial.gd" id="3_i06lx"]
+[ext_resource type="Script" path="res://DeckDiscard.gd" id="4_oxuym"]
+[ext_resource type="Script" path="res://DeckHand.gd" id="5_hsdhp"]
+
+[node name="Deck" type="Node"]
+script = ExtResource("1_cmhdn")
+
+[node name="DeckPlayer" type="Node" parent="."]
+script = ExtResource("2_cn6te")
+
+[node name="DeckTutorial" type="Node" parent="."]
+script = ExtResource("3_i06lx")
+
+[node name="DeckDiscard" type="Node" parent="."]
+script = ExtResource("4_oxuym")
+
+[node name="DeckHand" type="Node" parent="."]
+script = ExtResource("5_hsdhp")

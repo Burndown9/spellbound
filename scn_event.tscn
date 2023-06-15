@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://dw3hbl6r0c1qr"]
+[gd_scene load_steps=123 format=3 uid="uid://dw3hbl6r0c1qr"]
 
 [ext_resource type="Script" path="res://scn_event.gd" id="1_03env"]
 [ext_resource type="Texture2D" uid="uid://bng01fygeximc" path="res://art/book/ezgif-frame-008.png" id="2_80em8"]
@@ -114,6 +114,8 @@
 [ext_resource type="Texture2D" uid="uid://bnx1dc1dhfupp" path="res://art/book/ezgif-frame-118.png" id="112_xvsty"]
 [ext_resource type="Texture2D" uid="uid://dryqwen5kq6ms" path="res://art/book/ezgif-frame-119.png" id="113_t7rbv"]
 [ext_resource type="Texture2D" uid="uid://wpyv210v1njq" path="res://art/book/ezgif-frame-120.png" id="114_1yu4s"]
+[ext_resource type="Texture2D" uid="uid://dyl1ax4iu0gc" path="res://art/book/page.png" id="115_1utj7"]
+[ext_resource type="FontFile" uid="uid://brgntqlkxkw78" path="res://fonts/IMMORTAL.ttf" id="116_c3bch"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awqmw"]
 animations = [{
@@ -463,6 +465,27 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_ut8g2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_guppd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ku0tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_xhtqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_y5u4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3ban6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_g637l")
+}, {
+"duration": 1.0,
 "texture": ExtResource("27_peax1")
 }, {
 "duration": 1.0,
@@ -617,11 +640,160 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("78_dqfrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_6be85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_l5xft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_vmlti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ajlt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_ixnol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_pgrcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_kkke4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_hiapj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_khdbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_06i6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_h8ce2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_f3j74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_bjb87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_hysag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_a3cq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_3sqq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_jrua8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_8i6i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_pdt2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_lem0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_8yx5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_186r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_4wy3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_85tps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_b7fx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_822lf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_1uf6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_ridyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_41jvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_14xfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_7x4yt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_qdi5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_bves8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_xvsty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_t7rbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_1yu4s")
 }],
 "loop": false,
 "name": &"turnpage",
-"speed": 60.0
+"speed": 30.0
 }]
+
+[sub_resource type="Animation" id="Animation_oa2v0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("colorrect_fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2pwo6"]
+resource_name = "fade_to_black"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("colorrect_fade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hi3sl"]
+_data = {
+"RESET": SubResource("Animation_oa2v0"),
+"fade_to_black": SubResource("Animation_2pwo6")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_81hma"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pye7o"]
 
 [node name="scn_event" type="Node2D"]
 script = ExtResource("1_03env")
@@ -631,3 +803,56 @@ position = Vector2(575, 324.5)
 scale = Vector2(0.9, 0.901389)
 sprite_frames = SubResource("SpriteFrames_awqmw")
 animation = &"turnpage"
+frame = 94
+frame_progress = 1.0
+
+[node name="colorrect_fade" type="ColorRect" parent="."]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 658.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hi3sl")
+}
+
+[node name="bg" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(789, 326.5)
+scale = Vector2(0.979275, 0.883275)
+texture = ExtResource("115_1utj7")
+
+[node name="pagecount" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 169.0
+offset_top = 597.0
+offset_right = 220.0
+offset_bottom = 631.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("116_c3bch")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_81hma")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pye7o")
+bbcode_enabled = true
+text = "[right]1[/right]"
+
+[node name="leftpagetext" type="RichTextLabel" parent="."]
+offset_left = 190.0
+offset_top = 18.0
+offset_right = 571.0
+offset_bottom = 360.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("116_c3bch")
+theme_override_font_sizes/normal_font_size = 24
+theme_override_styles/focus = SubResource("StyleBoxEmpty_81hma")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pye7o")
+bbcode_enabled = true

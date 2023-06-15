@@ -181,6 +181,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u5mwi")
 text = "Options"
 
 [node name="colorrect_fade" type="ColorRect" parent="."]
+top_level = true
+z_index = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

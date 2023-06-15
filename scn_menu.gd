@@ -30,29 +30,25 @@ func BackToMap():
 	#tell map to get ready (throw signal)
 	#change_scene_to_file(scn_map.tscn)
 
-
-func _on_btn_new_game_pressed():
-	#play crash effect
+# called whenever a player presses a menu button - crash sfx, then end music, then fade to black (to fade in next screen)
+func stop_music_fade_out():
 	$SFX.play()
 	$Music.stop()
 	$AnimationPlayer.play("fade_to_black")
+
+func _on_btn_new_game_pressed():
+	stop_music_fade_out()
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://scn_event.tscn")
 
 
 func _on_btn_load_game_pressed():
-	#play crash effect
-	$SFX.play()
-	$Music.stop()
-	$AnimationPlayer.play("fade_to_black")
+	stop_music_fade_out()
 
 
 func _on_btn_quit_pressed():
-	#play crash effect
-	$SFX.play()
-	$Music.stop()
-	#start the timer
+	stop_music_fade_out()
 	$tmr_quit.start()
-	#begin fadeout
-	$AnimationPlayer.play("fade_to_black")
 
 
 func _on_quit_timeout():

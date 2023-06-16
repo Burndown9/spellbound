@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://dw3hbl6r0c1qr"]
+[gd_scene load_steps=125 format=3 uid="uid://dw3hbl6r0c1qr"]
 
 [ext_resource type="Script" path="res://scn_event.gd" id="1_03env"]
 [ext_resource type="Texture2D" uid="uid://bng01fygeximc" path="res://art/book/ezgif-frame-008.png" id="2_80em8"]
@@ -116,6 +116,7 @@
 [ext_resource type="Texture2D" uid="uid://wpyv210v1njq" path="res://art/book/ezgif-frame-120.png" id="114_1yu4s"]
 [ext_resource type="Texture2D" uid="uid://dyl1ax4iu0gc" path="res://art/book/page.png" id="115_1utj7"]
 [ext_resource type="FontFile" uid="uid://brgntqlkxkw78" path="res://fonts/IMMORTAL.ttf" id="116_c3bch"]
+[ext_resource type="Texture2D" uid="uid://hn3iuflvkeqv" path="res://art/stills/watch.png" id="117_e8phi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_awqmw"]
 animations = [{
@@ -465,48 +466,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("20_ut8g2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_guppd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_ku0tm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_xhtqx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_y5u4v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_3ban6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_g637l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_peax1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_f46e4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_3toaj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_10ovi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_hfrfd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_2tyd2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_po25m")
-}, {
-"duration": 1.0,
 "texture": ExtResource("34_voxgd")
 }, {
 "duration": 1.0,
@@ -751,7 +710,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"turnpage",
-"speed": 30.0
+"speed": 60.0
 }]
 
 [sub_resource type="Animation" id="Animation_oa2v0"]
@@ -795,6 +754,35 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pye7o"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xo58"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("117_e8phi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_e8phi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_e8phi")
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_e8phi")
+}],
+"loop": false,
+"name": &"flash",
+"speed": 3.75
+}]
+
 [node name="scn_event" type="Node2D"]
 script = ExtResource("1_03env")
 
@@ -803,10 +791,11 @@ position = Vector2(575, 324.5)
 scale = Vector2(0.9, 0.901389)
 sprite_frames = SubResource("SpriteFrames_awqmw")
 animation = &"turnpage"
-frame = 94
+frame = 80
 frame_progress = 1.0
 
 [node name="colorrect_fade" type="ColorRect" parent="."]
+visible = false
 z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -849,10 +838,18 @@ text = "[right]1[/right]"
 offset_left = 190.0
 offset_top = 18.0
 offset_right = 571.0
-offset_bottom = 360.0
+offset_bottom = 497.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("116_c3bch")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/normal_font_size = 18
 theme_override_styles/focus = SubResource("StyleBoxEmpty_81hma")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_pye7o")
 bbcode_enabled = true
+
+[node name="Watch" type="AnimatedSprite2D" parent="."]
+position = Vector2(217, 590)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_6xo58")
+animation = &"flash"
+frame = 6
+frame_progress = 1.0
